@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="dashboard-container">
+    
+    <!-- ELEMEN SEMANTIK: <nav> Sidebar Kiri -->
+    <nav role="navigation">
+      <ul>
+        <li><a href="#" class="nav-link active" id="navHome" onclick="switchTab(event, 'welcomeSection')">Home</a></li>
+        <!-- Saat Mahasiswa diklik, mengarah ke 'welcomeSection' -->
+        <li><a href="#" class="nav-link" id="navMahasiswa" onclick="switchTab(event, 'welcomeSection')">Mahasiswa</a></li>
+        <li><a href="#" class="nav-link" id="navKelas" onclick="switchTab(event, 'sectionProgres')">Kelas</a></li>
+        <li><a href="#" class="nav-link" id="navAktifitas" onclick="switchTab(event, 'sectionAktifitas')">Aktifitas</a></li>
+        <li><a href="#" class="nav-link" id="navStatistik" onclick="switchTab(event, 'asideStatistik')">Statistik</a></li>
+        <li><a href="#" class="nav-link" id="navDokumen" onclick="switchTab(event, 'footerDokumen')">Dokumen</a></li>
+        <li><a href="#" class="nav-link" id="navSettings" onclick="switchTab(event, 'welcomeSection')">Settings</a></li>
+        <li><a href="#" class="nav-link" id="navSignOut" onclick="logoutAlert(event)">Sign Out</a></li>
+      </ul>
+    </nav>
+
+    <!-- Wraper Area Utama Kanan -->
+    <div class="main-wrapper">
+      
+      <!-- ELEMEN SEMANTIK: <header> Top Bar -->
+      <header role="banner">
+        <h1 id="appTitle">Royal Dashboard</h1>
+        <input type="text" id="searchInput" placeholder="Cari Kelas, Dokumen, Aktifitas dll...">
+      </header>
+
+      <!-- ELEMEN SEMANTIK: <main> -->
+      <main role="main">
+        
+        <div id="sectionHome" class="tab-content">
+          
+          <!-- ELEMEN SEMANTIK: Banner Data Diri Mahasiswa -->
+          <aside class="welcome-banner card" id="welcomeSection">
+            <div>
+              <h2 id="welcomeText">Selamat Datang, M.Faza Ghani</h2>
+              <p id="classInfoText" class="class-title">Kelas SI-3J</p>
+              <p id="subInfoText" class="class-desc">
+                Kamu memiliki Statistik, 3 Progres Kelas, 4 Aktifitas Selanjutnya dan 3 Lampiran Dokumen yang ada pada aplikasi ini.
+              </p>
+            </div>
+            <div class="profile-img-container">
+              <img id="userAvatar" src="gambar/foto faza.jpeg" alt="Foto Profil">
+            </div>
+          </aside>
+
+          <!-- Content Grid Layout -->
+          <div class="content-grid">
+            
+            <!-- ELEMEN SEMANTIK: <aside> Kartu Statistik dengan Pemanggil Gambar -->
+            <aside class="card" id="asideStatistik">
+              <h3>Statistik Mahasiswa</h3>
+              <!-- PEMANGGIL GAMBAR STATISTIK -->
+              <div class="chart-container" style="width: 100% !important; height: 260px !important; overflow: hidden !important; display: flex !important; justify-content: center !important; align-items: center !important; ">
+                <img  id="chartimage" src="gambar/Chart_Statistik.svg" alt="Statistik Mahasiswa">
+              </div>
+            </aside>
+
+            <!-- ELEMEN SEMANTIK: <section> Progres Kelas -->
+            <section class="card" id="sectionProgres">
+              <h3 id="progressTitle">Progres Kelas</h3>
+              <div class="info-list" id="progressList">
+                <div class="info-item">
+                  <strong>Matakuliah A</strong>
+                  <span>78 Pendaftar</span>
+                </div>
+                <div class="info-item">
+                  <strong>Matakuliah B</strong>
+                  <span>50 Pendaftar</span>
+                </div>
+                <div class="info-item">
+                  <strong>Matakuliah C</strong>
+                  <span>40 Pendaftar</span>
+                </div>
+                <div class="info-item">
+                  <strong>Matakuliah D</strong>
+                  <span>10 Pendaftar</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- ELEMEN SEMANTIK: <section> Aktifitas Selanjutnya -->
+            <section class="card" id="sectionAktifitas">
+              <h3 id="activityTitle">Aktifitas Selanjutnya</h3>
+              <div class="info-list" id="activityList">
+                <div class="info-item">
+                  <strong>Perkuliahan Daring 1</strong>
+                  <span>Senin, 15 Januari 2025</span>
+                </div>
+                <div class="info-item">
+                  <strong>Perkuliahan Daring 1</strong>
+                  <span>Selasa, 15 Februari 2025</span>
+                </div>
+                <div class="info-item">
+                  <strong>Perkuliahan Daring 1</strong>
+                  <span>Rabu, 15 Maret 2025</span>
+                </div>
+                <div class="info-item">
+                  <strong>Perkuliahan Daring 1</strong>
+                  <span>Kamis, 15 April 2025</span>
+                </div>
+              </div>
+            </section>
+
+          </div>
+
+          <!-- ELEMEN SEMANTIK: <footer> Lampiran Dokumen -->
+          <footer id="footerDokumen">
+            <h3 id="footerTitle">Lampiran</h3>
+            <div class="doc-list" id="documentList">
+              <div class="doc-item">
+                <span><strong>Lampiran Dokumen 1</strong> - Matakuliah A | Tugas Bersama Perkuliahan Daring</span>
+                <a href="#">Lihat Dokumen</a>
+              </div>
+              <div class="doc-item">
+                <span><strong>Lampiran Dokumen 2</strong> - Matakuliah B | Tugas Bersama Perkuliahan Daring</span>
+                <a href="#">Lihat Dokumen</a>
+              </div>
+              <div class="doc-item">
+                <span><strong>Lampiran Dokumen 3</strong> - Matakuliah C | Tugas Bersama Perkuliahan Daring</span>
+                <a href="#">Lihat Dokumen</a>
+              </div>
+            </div>
+          </footer>
+
+        </div>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

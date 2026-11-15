@@ -1,0 +1,240 @@
+/* Reset Basic */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Sidebar Navigasi Kiri */
+nav {
+  width: 220px;
+  background-color: #0c4a9e;
+  min-height: 100vh;
+  padding-top: 20px;
+  flex-shrink: 0;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li a {
+  display: block;
+  padding: 12px 25px;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  border-left: 4px solid transparent;
+}
+
+nav ul li a:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* KETIKA MENU DI-KLIK / AKTIF BERWARNA PINK */
+nav ul li a.active {
+  color: #ffffff !important;
+  font-weight: bold;
+  background-color: #e91e63 !important;
+  border-left: 4px solid #ff80ab !important;
+}
+
+/* Area Utama Kanan */
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #ffffff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+header h1 {
+  font-size: 20px;
+  color: #0c4a9e;
+  font-weight: bold;
+}
+
+header input[type="text"] {
+  padding: 8px 16px;
+  width: 280px;
+  border: 1px solid #cbd5e1;
+  border-radius: 20px;
+  outline: none;
+  font-size: 13px;
+  background-color: #f8fafc;
+}
+
+main {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+aside.welcome-banner {
+  background-color: #0c4a9e;
+  color: white;
+  padding: 24px 30px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+aside.welcome-banner h2 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+aside.welcome-banner p.class-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+aside.welcome-banner p.class-desc {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.profile-img-container img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  object-fit: cover;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card h3 {
+  font-size: 14px;
+  color: #475569;
+  margin-bottom: 16px;
+}
+
+#asidStatistik {
+  background-color: #ffffff !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 15px !important;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-item {
+  background-color: #f8fafc;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border-left: 4px solid #0c4a9e;
+  font-size: 12px;
+}
+
+.info-item strong {
+  display: block;
+  color: #1e293b;
+  margin-bottom: 2px;
+}
+
+.info-item span {
+  color: #64748b;
+  font-size: 11px;
+}
+
+footer {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+footer h3 {
+  font-size: 14px;
+  color: #475569;
+  margin-bottom: 14px;
+}
+
+.doc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.doc-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8fafc;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.doc-item a {
+  color: #0c4a9e;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.doc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================================
+   EFEK SOROTAN BLOK WARNA PINK (UNTUK SEMUA KARTU & BANNER)
+   ================================================-------- */
+.highlight-card {
+  border: 2px solid #e91e63 !important;
+  box-shadow: 0 0 15px rgba(233, 30, 99, 0.4) !important;
+  transform: scale(1.01);
+}
+
+/* Efek sorot khusus untuk Banner Data Diri Mahasiswa di atas */
+aside.welcome-banner.highlight-card {
+  background-color: #ad1457 !important;
+  border: 3px solid #ff80ab !important;
+  box-shadow: 0 4px 25px rgba(233, 30, 99, 0.6) !important;
+}
